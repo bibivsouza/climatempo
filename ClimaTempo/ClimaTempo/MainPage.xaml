@@ -2,18 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ClimaTempo"
-             x:Class="ClimaTempo.MainPage">
+             x:Class="ClimaTempo.MainPage"
+              x:Name="Main">
 
-   
-    <StackLayout> 
-        <Label Text="Clima"
-                VerticalOptions="CenterAndExpand" 
+
+    <StackLayout>
+        <Label Text="Climatempo"
+                VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-      <Button Clicked="Button_Pesquisa" Text="Pesquisar">
-      </Button>
+        <StackLayout>
+            <ListView x:Name="ListCidades"
+                  ItemsSource="{Binding Cidades, Source={x:Reference Main}}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
 
-       <!--lista das cidades favoritas-->
+                           <Label Grid.Column="0" Grid.Row="1"
+                           Text="{Binding Name}"
+                               TextColor="Gray"
+                                FontSize="12"
+                                    />
+                           <Label Grid.Column="1" Grid.Row="1"
+                           Text="Ensolarado"
+                               TextColor="Gray"
+                                FontSize="12"
+                                    />
+                            <Label Grid.Column="2" Grid.Row="1"
+                           Text="28 °C"
+                               TextColor="Gray"
+                                FontSize="12"
+                                    />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Clicked="Button_Pesquisa" Text="Pesquisar">
+            </Button>
+            
+        </StackLayout>
+
 
     </StackLayout>
 

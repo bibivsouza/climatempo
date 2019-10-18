@@ -23,9 +23,25 @@ namespace ClimaTempo
            
             InitializeComponent();
 
+
+            //Verificar cidades favoritas
+            verificarCidades();
+
         }
 
-
+        private async void  verificarCidades()
+        {
+            List<Cidade> Cidades = new List<Cidade>();
+            Cidades = await App.DbContext.GetCidadesAsync();
+            if (Cidades != null)
+            {
+                ListCidades.ItemsSource = Cidades.OrderBy(x=>x.Name);
+            }
+            else
+            {
+                await DisplayAlert("alert1","Não existem Cidades em Favoritos!","ok");
+            }
+        }
 
         private void Button_Pesquisa(object sender, EventArgs e)
         {

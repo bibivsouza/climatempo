@@ -5,16 +5,13 @@
     <ContentPage.Content>
     
             
-            <StackLayout Padding="10,10,10,10"  VerticalOptions="Center">
-            <Button Text="Favoritar" Clicked="btnFavorito_Clicked"/>
-                <Label Text="Pagina Detalhes"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="FillAndExpand" />
-
-            <Image Source="sun.png" WidthRequest="50" HeightRequest="50" />
+            <StackLayout Padding="5"  VerticalOptions="Center">
+          
+               
+            <!--<Image Source="sun.png" WidthRequest="50" HeightRequest="50" />-->
                 
                 <Label Text="Cidade" />
-            <Label x:Name="lbTitle" Text="{Binding Title}" TextColor="Black" />
+                <Label x:Name="lbTitle" Text="{Binding Title}" TextColor="Black" />
                 
                 <Label Text="Temperatura"  />
                 <Label x:Name="temp" TextColor="Black"  Text="{Binding Temperature}"  />
@@ -24,7 +21,21 @@
                 
                 <Label Text="Temperatura Min."  />
                 <Label x:Name="tempMin" TextColor="Black"  Text="{Binding TemperatureMin}"  />
-         
+
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                   
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+ 
+            </Grid>
+            <Button Text="Favoritar" Clicked="btnFavorito_Clicked" Grid.Column="0" Grid.Row="0"/>
+
+            <Button Text="Pagina Inicial" Clicked="btnMain_Clicked" Grid.Column="1" Grid.Row="0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

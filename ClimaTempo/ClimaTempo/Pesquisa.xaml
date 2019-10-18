@@ -26,8 +26,7 @@
 
                                 <Label Grid.Column="0"
                            Text="{Binding Name}"
-                           FontAttributes="Bold"
-                               TextColor="Black"
+                               TextColor="Gray"
                       FontSize="12"
                       />
 

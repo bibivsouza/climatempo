@@ -15,14 +15,6 @@ namespace ClimaTempo
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Detalhes : ContentPage
 	{
-        private string title;
-
-        public string Title
-        {
-            get { return title; }
-            set { title = value; }
-        }
-
 
         public Detalhes (string nome)
 		{
@@ -42,7 +34,7 @@ namespace ClimaTempo
 
         }
 
-        // padda o nome da cidade para buscar a previsão do tempo
+        // buscar a previsão do tempo
         private async void buscarDados(string cidade)
         {
             try
@@ -52,11 +44,6 @@ namespace ClimaTempo
                     //acesso a API do openweathermap.or
                     Tempo previsaoDoTempo = await DataService.GetPrevisaoDoTempo(cidade);
                     this.BindingContext = previsaoDoTempo;
-                    if (this.BindingContext != null)
-                    {
-                      
-                    }
-                
                 }
             }
             catch (Exception ex)
@@ -65,6 +52,7 @@ namespace ClimaTempo
             }
         }
 
+        //favoritar a cidade
         private async void btnFavorito_Clicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(lbTitle.Text))
@@ -74,10 +62,12 @@ namespace ClimaTempo
                     Name = lbTitle.Text,
 
                 });
-
-                lbTitle.Text = string.Empty;
-               // listView.ItemsSource = await App.Database.Get();
             }
+        }
+
+        private async void btnMain_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
         }
     }
 }
