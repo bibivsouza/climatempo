@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClimaTempo.Detalhes">
+    <ContentPage.Content>
+    
+            
+            <StackLayout Padding="10,10,10,10"  VerticalOptions="Center">
+            <Button Text="Favoritar" Clicked="btnFavorito_Clicked"/>
+                <Label Text="Pagina Detalhes"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="FillAndExpand" />
+
+            <Image Source="sun.png" WidthRequest="50" HeightRequest="50" />
+                
+                <Label Text="Cidade" />
+            <Label x:Name="lbTitle" Text="{Binding Title}" TextColor="Black" />
+                
+                <Label Text="Temperatura"  />
+                <Label x:Name="temp" TextColor="Black"  Text="{Binding Temperature}"  />
+                
+                <Label Text="Temperatura Máx."  />
+                <Label x:Name="tempMax" TextColor="Black"  Text="{Binding TemperatureMax}"  />
+                
+                <Label Text="Temperatura Min."  />
+                <Label x:Name="tempMin" TextColor="Black"  Text="{Binding TemperatureMin}"  />
+         
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
