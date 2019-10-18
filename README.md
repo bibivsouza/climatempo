@@ -38,6 +38,7 @@ Proposta: Desenvolver uma aplicação híbrida onde o usuário poderá seleciona
   - inserção de imagens
   
 ## Uso de Bibliotecas: */
-  Foram utilizadas bibliotecas tasi como 
+  Foram utilizadas bibliotecas tais como 
   - NewtonSoft.Json - para manipulação de objeto json.
   - SQLite-NET - criação e utilização de sgbd
+  - API - https://openweathermap.org 
