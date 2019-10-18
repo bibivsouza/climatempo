@@ -26,7 +26,7 @@ namespace ClimaTempo.Context
             public Task<int> SaveCidadesAsync(Cidade cidade)
             {
                 return _dbContext.InsertAsync(cidade);
-            }
+            } 
 
             public Task<int> DeleteCidadesAsync(Cidade cidade)
             {
