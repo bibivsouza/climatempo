@@ -1,9 +1,9 @@
-# climatempo
-# Bianca Vilela de Souza - 18/10/2019 
-# Stefanini
+## Aplicação Climatempo
+## Autor: Bianca Vilela de Souza - 18/10/2019 
+## Solicitante Stefanini
 
-# Desafio - Mobile Development
-# Desenvolvimento App Xamarin - Climatempo
+## Desafio - Mobile Development
+## Desenvolvimento App Xamarin - Climatempo
 
 Proposta: Desenvolver uma aplicação híbrida onde o usuário poderá selecionar determinada cidades dentro de uma lista, podendo ver respectivas informações de clima. 
  
